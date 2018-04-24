@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AnimalsController < OpenReadController
+class AnimalsController < ProtectedController
   before_action :set_animal, only: %i[show update destroy]
 
   # GET /animals
