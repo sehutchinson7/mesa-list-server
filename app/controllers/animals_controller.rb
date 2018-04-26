@@ -3,9 +3,16 @@
 class AnimalsController < ProtectedController
   before_action :set_animal, only: %i[show update destroy]
 
-  # GET /animals
+  # GET /animals (all)
   def index
     @animals = Animal.all
+
+    render json: @animals
+  end
+
+  # Get /animals for a specific user
+  def my_animals
+    @animals = current_user.animals.all
 
     render json: @animals
   end
