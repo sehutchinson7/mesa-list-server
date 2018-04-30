@@ -51,7 +51,7 @@ class AnimalsController < ProtectedController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_animal
-    @animal = Animal.find(params[:id])
+    @animal = current_user.animals.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
